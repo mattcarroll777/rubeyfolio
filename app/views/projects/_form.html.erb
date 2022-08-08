@@ -1,0 +1,40 @@
+  <%= form_with model: @project do |form| %>
+    <div>
+      <%=form.label :title %><br>
+      <%=form.text_field :title %>
+      <% @project.errors.full_messages_for(:title).each do |msg| %>
+        <div><%= msg %> </div>
+        <% end %>
+    </div>
+
+    <div>
+      <%=form.label :gitLink %><br>
+      <%=form.text_field :gitLink %>
+    </div>
+
+    <div>
+      <%=form.label :siteLink %><br>
+      <%=form.text_field :siteLink %>
+    </div>
+
+    <div>
+      <%=form.label :mainTech %><br>
+      <%=form.text_field :mainTech %>
+      <% @project.errors.full_messages_for(:mainTech).each do |msg| %>
+        <div><%= msg %> </div>
+        <% end %>
+    </div>
+
+    <div>
+      <%=form.label :body %><br>
+      <%=form.text_area :body %>
+      <% @project.errors.full_messages_for(:body).each do |msg| %>
+        <div><%= msg %> </div>
+        <% end %>
+    </div>
+
+    <div>
+      <%= form.submit %>
+    </div>
+    
+  <% end %>
